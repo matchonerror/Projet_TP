@@ -36,7 +36,7 @@ Jeu::Jeu(const Jeu &jeu):snake(jeu.snake)
     largeur = jeu.largeur;
     hauteur = jeu.hauteur;
     dirSnake = jeu.dirSnake;
-    
+
     if (jeu.terrain!=nullptr)
     {
         terrain = new Case[largeur*hauteur];
@@ -76,34 +76,34 @@ Jeu &Jeu::operator=(const Jeu &jeu)
 
 bool Jeu::init()
 {
-	int x, y;
-	// list<Position>::iterator itSnake;
+    int x, y;
+    // list<Position>::iterator itSnake;
 
-	const char terrain_defaut[15][21] = {
-		"####..##############",
-		"#........##........#",
-		"#.#####..##...####.#",
-		"#........##........#",
-		"#..................#",
-		"#..................#",
-		"....................",
-		"....................",
-		"....................",
-		"....................",
-		"#..................#",
-		"#..................#",
-		"#.....#......#.....#",
-		"#.....#......#.....#",
-        "####..##############"
+    const char terrain_defaut[15][21] = {
+            "####..##############",
+            "#........##........#",
+            "#.#####..##...####.#",
+            "#........##........#",
+            "#..................#",
+            "#..................#",
+            "....................",
+            "....................",
+            "....................",
+            "....................",
+            "#..................#",
+            "#..................#",
+            "#.....#......#.....#",
+            "#.....#......#.....#",
+            "####..##############"
     };
 
-	largeur = 20;
-	hauteur = 15;
+    largeur = 20;
+    hauteur = 15;
 
-	terrain = new Case[largeur*hauteur];
+    terrain = new Case[largeur*hauteur];
 
-	for(y=0;y<hauteur;++y)
-		for(x=0;x<largeur;++x)
+    for(y=0;y<hauteur;++y)
+        for(x=0;x<largeur;++x)
             if (terrain_defaut[y][x]=='#')
                 terrain[y*largeur+x] = MUR;
             else
@@ -111,11 +111,12 @@ bool Jeu::init()
 
     int longueurSerpent = 5;
     snake.clear();
-
+    //ajoutPomme
+    ajoutPomme();
     Position posTete;
     posTete.x = 15;
-    posTete.y = 8; 
-	for (int i=0; i<longueurSerpent; i++)
+    posTete.y = 8;
+    for (int i=0; i<longueurSerpent; i++)
     {
         snake.push_back(posTete);
         posTete.x--;
@@ -127,7 +128,7 @@ bool Jeu::init()
 void Jeu::evolue()
 {
     Position posTest;
-	list<Position>::iterator itSnake;
+    list<Position>::iterator itSnake;
 
     int depX[] = {-1, 1, 0, 0};
     int depY[] = {0, 0, -1, 1};
@@ -139,6 +140,16 @@ void Jeu::evolue()
     {
         snake.pop_back();
         snake.push_front(posTest);
+    } else{
+        if (terrain[posTest.y*largeur+posTest.x]==POMME){
+            snake.push_front(posTest);
+            terrain[posTest.y*largeur+posTest.x]=VIDE;
+            ajoutPomme();
+        } else{
+            //exit game
+            cout << "Game Over" << endl;
+            exit(0);
+        }
     }
 }
 
@@ -174,6 +185,10 @@ bool Jeu::posValide(const Position &pos) const
             itSnake++;
         return (itSnake==snake.end());
     }
+    else if (pos.x==largeur || pos.x==-1 || pos.y==hauteur || pos.y==-1)
+    {
+
+    }
     else
         return false;
 }
@@ -181,4 +196,56 @@ bool Jeu::posValide(const Position &pos) const
 void Jeu::setDirection(Direction dir)
 {
     dirSnake = dir;
+}
+
+void Jeu::ajoutMur()
+{
+    Position posMur;
+
+    // Trouve une case libre
+    do {
+        posMur.x = rand()%largeur;
+        posMur.y = rand()%hauteur;
+    } while (!posValide(posMur));
+    terrain[posMur.y*largeur+posMur.x]=MUR;
+}
+
+void Jeu::suppressionMur()
+{
+    Position posMur;
+
+    // Trouve un mur
+    do {
+        posMur.x = rand()%largeur;
+        posMur.y = rand()%hauteur;
+    } while (terrain[posMur.y*largeur+posMur.x]!=MUR);
+    terrain[posMur.y*largeur+posMur.x]=VIDE;
+}
+
+Position Jeu::getPomme()
+{
+    Position posPomme;
+    posPomme.x = -1;
+    posPomme.y = -1;
+
+    for (int y=0; y<hauteur; y++)
+        for (int x=0; x<largeur; x++)
+            if (terrain[y*largeur+x]==POMME)
+            {
+                posPomme.x = x;
+                posPomme.y = y;
+            }
+    return posPomme;
+}
+
+void Jeu::ajoutPomme()
+{
+    Position posPomme;
+
+    // Trouve une case libre
+    do {
+        posPomme.x = rand()%largeur;
+        posPomme.y = rand()%hauteur;
+    } while (!posValide(posPomme));
+    terrain[posPomme.y*largeur+posPomme.x]=POMME;
 }

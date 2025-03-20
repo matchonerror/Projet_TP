@@ -1,5 +1,4 @@
-
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.26)
 project(Snake)
 
 set(CMAKE_CXX_STANDARD 20)

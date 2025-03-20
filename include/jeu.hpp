@@ -3,12 +3,12 @@
 
 #include <list>
 
-typedef enum {VIDE, MUR} Case;
+typedef enum {VIDE, MUR, POMME} Case;
 typedef enum {GAUCHE, DROITE, HAUT, BAS} Direction;
 
 class Position
 {
-  public:
+public:
     int x, y;
     Position();
     Position(int,int);
@@ -18,13 +18,13 @@ class Position
 
 class Jeu
 {
-  protected:
+protected:
     Case *terrain;
     int largeur, hauteur; // Nombre de cases en largeur et en hauteur
     std::list<Position> snake;
     Direction dirSnake;
-    
-  public:
+
+public:
     Jeu();
     Jeu(const Jeu &);
     ~Jeu();
@@ -38,17 +38,23 @@ class Jeu
     int getNbCasesX() const;
     int getNbCasesY() const;
 
-    // Retourne la case à une position donnée
+    // Retourne la case ï¿½ une position donnï¿½e
     Case getCase(const Position &) const;
 
-    // Retourne la liste des éléments du serpent en lecture seule
+    // Retourne la liste des ï¿½lï¿½ments du serpent en lecture seule
     const std::list<Position> &getSnake() const;
 
-    // Indique si la case à une position donnée existe et est libre
+    // Indique si la case ï¿½ une position donnï¿½e existe et est libre
     bool posValide(const Position &) const;
 
     // Modifie la direction
     void setDirection(Direction);
+
+    void ajoutMur();
+    void suppressionMur();
+
+    Position getPomme();
+    void ajoutPomme();
 };
 
 #endif
