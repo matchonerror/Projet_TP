@@ -214,13 +214,13 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Projet_TP_BINARY_DIR:STATIC=/Volumes/code/Projet_TP/cmake-build-debug/lib
+Projet_TP_BINARY_DIR:STATIC=/Volumes/code/Projet_TP/cmake-build-debug/src
 
 //Value Computed by CMake
 Projet_TP_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-Projet_TP_SOURCE_DIR:STATIC=/Volumes/code/Projet_TP/lib
+Projet_TP_SOURCE_DIR:STATIC=/Volumes/code/Projet_TP/src
 
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/Users/thanhphu/anaconda3/lib/cmake/Qt5Core

@@ -177,7 +177,7 @@ build src/CMakeFiles/my_app.dir/my_app_autogen/mocs_compilation.cpp.o: CXX_COMPI
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/CMakeFiles/my_app.dir/my_app_autogen/mocs_compilation.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -fPIC
-  INCLUDES = -I/Volumes/code/Projet_TP/include -isystem /Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/include -isystem /Users/thanhphu/anaconda3/include/qt -isystem /Users/thanhphu/anaconda3/include/qt/QtCore -isystem /Users/thanhphu/anaconda3/./mkspecs/macx-clang -isystem /Users/thanhphu/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/thanhphu/anaconda3/include/qt/QtWidgets
+  INCLUDES = -I/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/include -I/Volumes/code/Projet_TP/include -isystem /Users/thanhphu/anaconda3/include/qt -isystem /Users/thanhphu/anaconda3/include/qt/QtCore -isystem /Users/thanhphu/anaconda3/./mkspecs/macx-clang -isystem /Users/thanhphu/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/thanhphu/anaconda3/include/qt/QtWidgets
   OBJECT_DIR = src/CMakeFiles/my_app.dir
   OBJECT_FILE_DIR = src/CMakeFiles/my_app.dir/my_app_autogen
 
@@ -185,7 +185,7 @@ build src/CMakeFiles/my_app.dir/main.cpp.o: CXX_COMPILER__my_app_unscanned_Debug
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/CMakeFiles/my_app.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -fPIC
-  INCLUDES = -I/Volumes/code/Projet_TP/include -isystem /Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/include -isystem /Users/thanhphu/anaconda3/include/qt -isystem /Users/thanhphu/anaconda3/include/qt/QtCore -isystem /Users/thanhphu/anaconda3/./mkspecs/macx-clang -isystem /Users/thanhphu/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/thanhphu/anaconda3/include/qt/QtWidgets
+  INCLUDES = -I/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/include -I/Volumes/code/Projet_TP/include -isystem /Users/thanhphu/anaconda3/include/qt -isystem /Users/thanhphu/anaconda3/include/qt/QtCore -isystem /Users/thanhphu/anaconda3/./mkspecs/macx-clang -isystem /Users/thanhphu/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/thanhphu/anaconda3/include/qt/QtWidgets
   OBJECT_DIR = src/CMakeFiles/my_app.dir
   OBJECT_FILE_DIR = src/CMakeFiles/my_app.dir
 
