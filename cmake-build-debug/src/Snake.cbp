@@ -5,7 +5,7 @@
 		<Option title="Snake"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\anaconda3\;CMake Files\..\..\..\..\opt\anaconda3\lib\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Widgets\;CMake Files\lib\;CMake Files\src\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\anaconda3\;CMake Files\..\..\..\..\opt\anaconda3\lib\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Widgets\;CMake Files\src\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src"/>
@@ -100,6 +100,9 @@
 		</Unit>
 		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/lib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\"/>
 		</Unit>
 		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/../../../../opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5\"/>
@@ -208,9 +211,6 @@
 		</Unit>
 		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/../../../../opt/anaconda3/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\anaconda3\lib\cmake\Qt5Widgets\"/>
-		</Unit>
-		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/lib/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\lib\"/>
 		</Unit>
 		<Unit filename="/Users/tranhan/CLionProjects/Projet_TP/src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\"/>

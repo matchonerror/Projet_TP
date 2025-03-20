@@ -21,6 +21,7 @@ protected:
     void handleTimer();
     void handleButtonAjout();
     void handleButtonSuppr();
+    void showGameOverMessage();
 };
 
 class SnakeButton : public QPushButton

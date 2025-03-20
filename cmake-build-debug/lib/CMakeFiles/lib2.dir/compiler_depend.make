@@ -824,9 +824,10 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg \
-  /Users/tranhan/CLionProjects/Projet_TP/include/snakewindow.hpp \
-  /opt/anaconda3/include/qt/QtCore/QtCore \
-  /opt/anaconda3/include/qt/QtCore/QtCoreDepends \
+  /opt/anaconda3/include/qt/QtWidgets/QMessageBox \
+  /opt/anaconda3/include/qt/QtWidgets/qmessagebox.h \
+  /opt/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h \
+  /opt/anaconda3/include/qt/QtGui/qtguiglobal.h \
   /opt/anaconda3/include/qt/QtCore/qglobal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/assert.h \
   /opt/anaconda3/include/qt/QtCore/qconfig.h \
@@ -910,11 +911,15 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__charconv/to_chars.h \
   /opt/anaconda3/include/qt/QtCore/qnumeric.h \
   /opt/anaconda3/include/qt/QtCore/qversiontagging.h \
-  /opt/anaconda3/include/qt/QtCore/qabstractanimation.h \
-  /opt/anaconda3/include/qt/QtCore/qobject.h \
+  /opt/anaconda3/include/qt/QtGui/qtgui-config.h \
+  /opt/anaconda3/include/qt/QtWidgets/qtwidgets-config.h \
+  /opt/anaconda3/include/qt/QtWidgets/qdialog.h \
+  /opt/anaconda3/include/qt/QtWidgets/qwidget.h \
+  /opt/anaconda3/include/qt/QtGui/qwindowdefs.h \
   /opt/anaconda3/include/qt/QtCore/qobjectdefs.h \
   /opt/anaconda3/include/qt/QtCore/qnamespace.h \
   /opt/anaconda3/include/qt/QtCore/qobjectdefs_impl.h \
+  /opt/anaconda3/include/qt/QtCore/qobject.h \
   /opt/anaconda3/include/qt/QtCore/qstring.h \
   /opt/anaconda3/include/qt/QtCore/qchar.h \
   /opt/anaconda3/include/qt/QtCore/qbytearray.h \
@@ -983,12 +988,45 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__tree \
   /opt/anaconda3/include/qt/QtCore/qobject_impl.h \
+  /opt/anaconda3/include/qt/QtCore/qmargins.h \
+  /opt/anaconda3/include/qt/QtGui/qpaintdevice.h \
+  /opt/anaconda3/include/qt/QtCore/qrect.h \
+  /opt/anaconda3/include/qt/QtCore/qsize.h \
+  /opt/anaconda3/include/qt/QtCore/qpoint.h \
+  /opt/anaconda3/include/qt/QtGui/qpalette.h \
+  /opt/anaconda3/include/qt/QtGui/qcolor.h \
+  /opt/anaconda3/include/qt/QtGui/qrgb.h \
+  /opt/anaconda3/include/qt/QtGui/qrgba64.h \
+  /opt/anaconda3/include/qt/QtGui/qbrush.h \
+  /opt/anaconda3/include/qt/QtGui/qmatrix.h \
+  /opt/anaconda3/include/qt/QtGui/qpolygon.h \
+  /opt/anaconda3/include/qt/QtGui/qregion.h \
+  /opt/anaconda3/include/qt/QtCore/qdatastream.h \
+  /opt/anaconda3/include/qt/QtCore/qiodevice.h \
+  /opt/anaconda3/include/qt/QtCore/qline.h \
+  /opt/anaconda3/include/qt/QtGui/qtransform.h \
+  /opt/anaconda3/include/qt/QtGui/qimage.h \
+  /opt/anaconda3/include/qt/QtGui/qpixelformat.h \
+  /opt/anaconda3/include/qt/QtGui/qpixmap.h \
+  /opt/anaconda3/include/qt/QtCore/qsharedpointer.h \
+  /opt/anaconda3/include/qt/QtCore/qshareddata.h \
+  /opt/anaconda3/include/qt/QtCore/qhash.h \
+  /opt/anaconda3/include/qt/QtCore/qsharedpointer_impl.h \
+  /opt/anaconda3/include/qt/QtGui/qfont.h \
+  /opt/anaconda3/include/qt/QtGui/qfontmetrics.h \
+  /opt/anaconda3/include/qt/QtGui/qfontinfo.h \
+  /opt/anaconda3/include/qt/QtWidgets/qsizepolicy.h \
+  /opt/anaconda3/include/qt/QtGui/qcursor.h \
+  /opt/anaconda3/include/qt/QtGui/qkeysequence.h \
+  /Users/tranhan/CLionProjects/Projet_TP/include/snakewindow.hpp \
+  /opt/anaconda3/include/qt/QtCore/QtCore \
+  /opt/anaconda3/include/qt/QtCore/QtCoreDepends \
+  /opt/anaconda3/include/qt/QtCore/qabstractanimation.h \
   /opt/anaconda3/include/qt/QtCore/qabstracteventdispatcher.h \
   /opt/anaconda3/include/qt/QtCore/qeventloop.h \
   /opt/anaconda3/include/qt/QtCore/qabstractitemmodel.h \
   /opt/anaconda3/include/qt/QtCore/qvariant.h \
   /opt/anaconda3/include/qt/QtCore/qmap.h \
-  /opt/anaconda3/include/qt/QtCore/qhash.h \
   /opt/anaconda3/include/qt/QtCore/qabstractnativeeventfilter.h \
   /opt/anaconda3/include/qt/QtCore/qabstractproxymodel.h \
   /opt/anaconda3/include/qt/QtCore/qabstractstate.h \
@@ -999,12 +1037,10 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtCore/qbasictimer.h \
   /opt/anaconda3/include/qt/QtCore/qbitarray.h \
   /opt/anaconda3/include/qt/QtCore/qbuffer.h \
-  /opt/anaconda3/include/qt/QtCore/qiodevice.h \
   /opt/anaconda3/include/qt/QtCore/qbytearraymatcher.h \
   /opt/anaconda3/include/qt/QtCore/qcache.h \
   /opt/anaconda3/include/qt/QtCore/qcalendar.h \
   /opt/anaconda3/include/qt/QtCore/qlocale.h \
-  /opt/anaconda3/include/qt/QtCore/qshareddata.h \
   /opt/anaconda3/include/qt/QtCore/qcborarray.h \
   /opt/anaconda3/include/qt/QtCore/qcborvalue.h \
   /opt/anaconda3/include/qt/QtCore/qdatetime.h \
@@ -1013,8 +1049,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtCore/qtextstream.h \
   /opt/anaconda3/include/qt/QtCore/qset.h \
   /opt/anaconda3/include/qt/QtCore/qcontiguouscache.h \
-  /opt/anaconda3/include/qt/QtCore/qsharedpointer.h \
-  /opt/anaconda3/include/qt/QtCore/qsharedpointer_impl.h \
   /opt/anaconda3/include/qt/QtCore/qregularexpression.h \
   /opt/anaconda3/include/qt/QtCore/qurl.h \
   /opt/anaconda3/include/qt/QtCore/quuid.h \
@@ -1030,7 +1064,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtCore/qcoreevent.h \
   /opt/anaconda3/include/qt/QtCore/qconcatenatetablesproxymodel.h \
   /opt/anaconda3/include/qt/QtCore/qcryptographichash.h \
-  /opt/anaconda3/include/qt/QtCore/qdatastream.h \
   /opt/anaconda3/include/qt/QtCore/qdeadlinetimer.h \
   /opt/anaconda3/include/qt/QtCore/qelapsedtimer.h \
   /opt/anaconda3/include/qt/QtCore/qdir.h \
@@ -1065,12 +1098,9 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtCore/qlibrary.h \
   /opt/anaconda3/include/qt/QtCore/qlibraryinfo.h \
   /opt/anaconda3/include/qt/QtCore/qversionnumber.h \
-  /opt/anaconda3/include/qt/QtCore/qline.h \
-  /opt/anaconda3/include/qt/QtCore/qpoint.h \
   /opt/anaconda3/include/qt/QtCore/qlinkedlist.h \
   /opt/anaconda3/include/qt/QtCore/qlockfile.h \
   /opt/anaconda3/include/qt/QtCore/qloggingcategory.h \
-  /opt/anaconda3/include/qt/QtCore/qmargins.h \
   /opt/anaconda3/include/qt/QtCore/qmath.h \
   /opt/anaconda3/include/qt/QtCore/qmessageauthenticationcode.h \
   /opt/anaconda3/include/qt/QtCore/qmetaobject.h \
@@ -1124,8 +1154,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
   /opt/anaconda3/include/qt/QtCore/qreadwritelock.h \
-  /opt/anaconda3/include/qt/QtCore/qrect.h \
-  /opt/anaconda3/include/qt/QtCore/qsize.h \
   /opt/anaconda3/include/qt/QtCore/qresource.h \
   /opt/anaconda3/include/qt/QtCore/qsavefile.h \
   /opt/anaconda3/include/qt/QtCore/qscopedvaluerollback.h \
@@ -1174,37 +1202,19 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtWidgets/QtWidgetsDepends \
   /opt/anaconda3/include/qt/QtGui/QtGui \
   /opt/anaconda3/include/qt/QtGui/QtGuiDepends \
-  /opt/anaconda3/include/qt/QtGui/qtguiglobal.h \
-  /opt/anaconda3/include/qt/QtGui/qtgui-config.h \
   /opt/anaconda3/include/qt/QtGui/qabstracttextdocumentlayout.h \
   /opt/anaconda3/include/qt/QtGui/qtextlayout.h \
-  /opt/anaconda3/include/qt/QtGui/qcolor.h \
-  /opt/anaconda3/include/qt/QtGui/qrgb.h \
-  /opt/anaconda3/include/qt/QtGui/qrgba64.h \
   /opt/anaconda3/include/qt/QtGui/qevent.h \
-  /opt/anaconda3/include/qt/QtGui/qwindowdefs.h \
-  /opt/anaconda3/include/qt/QtGui/qregion.h \
-  /opt/anaconda3/include/qt/QtGui/qkeysequence.h \
   /opt/anaconda3/include/qt/QtGui/qvector2d.h \
   /opt/anaconda3/include/qt/QtGui/qtouchdevice.h \
   /opt/anaconda3/include/qt/QtGui/qtextformat.h \
-  /opt/anaconda3/include/qt/QtGui/qfont.h \
   /opt/anaconda3/include/qt/QtGui/qpen.h \
-  /opt/anaconda3/include/qt/QtGui/qbrush.h \
-  /opt/anaconda3/include/qt/QtGui/qmatrix.h \
-  /opt/anaconda3/include/qt/QtGui/qpolygon.h \
-  /opt/anaconda3/include/qt/QtGui/qtransform.h \
-  /opt/anaconda3/include/qt/QtGui/qimage.h \
-  /opt/anaconda3/include/qt/QtGui/qpaintdevice.h \
-  /opt/anaconda3/include/qt/QtGui/qpixelformat.h \
-  /opt/anaconda3/include/qt/QtGui/qpixmap.h \
   /opt/anaconda3/include/qt/QtGui/qtextoption.h \
   /opt/anaconda3/include/qt/QtGui/qglyphrun.h \
   /opt/anaconda3/include/qt/QtGui/qrawfont.h \
   /opt/anaconda3/include/qt/QtGui/qfontdatabase.h \
   /opt/anaconda3/include/qt/QtGui/qtextcursor.h \
   /opt/anaconda3/include/qt/QtGui/qtextdocument.h \
-  /opt/anaconda3/include/qt/QtGui/qpalette.h \
   /opt/anaconda3/include/qt/QtGui/qaccessible.h \
   /opt/anaconda3/include/qt/QtGui/qaccessiblebridge.h \
   /opt/anaconda3/include/qt/QtGui/qaccessibleobject.h \
@@ -1217,15 +1227,12 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtGui/qsurface.h \
   /opt/anaconda3/include/qt/QtGui/qsurfaceformat.h \
   /opt/anaconda3/include/qt/QtGui/qicon.h \
-  /opt/anaconda3/include/qt/QtGui/qcursor.h \
   /opt/anaconda3/include/qt/QtGui/qbitmap.h \
   /opt/anaconda3/include/qt/QtGui/qclipboard.h \
   /opt/anaconda3/include/qt/QtGui/qcolorspace.h \
   /opt/anaconda3/include/qt/QtGui/qcolortransform.h \
   /opt/anaconda3/include/qt/QtGui/qdesktopservices.h \
   /opt/anaconda3/include/qt/QtGui/qdrag.h \
-  /opt/anaconda3/include/qt/QtGui/qfontinfo.h \
-  /opt/anaconda3/include/qt/QtGui/qfontmetrics.h \
   /opt/anaconda3/include/qt/QtGui/qgenericmatrix.h \
   /opt/anaconda3/include/qt/QtGui/qgenericplugin.h \
   /opt/anaconda3/include/qt/QtGui/qgenericpluginfactory.h \
@@ -1307,11 +1314,7 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtGui/qtexttable.h \
   /opt/anaconda3/include/qt/QtGui/qvalidator.h \
   /opt/anaconda3/include/qt/QtGui/qtguiversion.h \
-  /opt/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h \
-  /opt/anaconda3/include/qt/QtWidgets/qtwidgets-config.h \
   /opt/anaconda3/include/qt/QtWidgets/qabstractbutton.h \
-  /opt/anaconda3/include/qt/QtWidgets/qwidget.h \
-  /opt/anaconda3/include/qt/QtWidgets/qsizepolicy.h \
   /opt/anaconda3/include/qt/QtWidgets/qabstractitemdelegate.h \
   /opt/anaconda3/include/qt/QtWidgets/qstyleoption.h \
   /opt/anaconda3/include/qt/QtWidgets/qabstractspinbox.h \
@@ -1336,7 +1339,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtWidgets/qcalendarwidget.h \
   /opt/anaconda3/include/qt/QtWidgets/qcheckbox.h \
   /opt/anaconda3/include/qt/QtWidgets/qcolordialog.h \
-  /opt/anaconda3/include/qt/QtWidgets/qdialog.h \
   /opt/anaconda3/include/qt/QtWidgets/qcolormap.h \
   /opt/anaconda3/include/qt/QtWidgets/qcolumnview.h \
   /opt/anaconda3/include/qt/QtWidgets/qcombobox.h \
@@ -1396,7 +1398,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
   /opt/anaconda3/include/qt/QtWidgets/qmdisubwindow.h \
   /opt/anaconda3/include/qt/QtWidgets/qmenu.h \
   /opt/anaconda3/include/qt/QtWidgets/qmenubar.h \
-  /opt/anaconda3/include/qt/QtWidgets/qmessagebox.h \
   /opt/anaconda3/include/qt/QtWidgets/qmouseeventtransition.h \
   /opt/anaconda3/include/qt/QtWidgets/qopenglwidget.h \
   /opt/anaconda3/include/qt/QtWidgets/QWidget \
@@ -1571,10 +1572,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtWidgets/qslider.h:
 
-/opt/anaconda3/include/qt/QtWidgets/qtwidgets-config.h:
-
-/opt/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h:
-
 /opt/anaconda3/include/qt/QtGui/qtguiversion.h:
 
 /opt/anaconda3/include/qt/QtGui/qtextlist.h:
@@ -1617,10 +1614,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtGui/qopenglextrafunctions.h:
 
-/opt/anaconda3/include/qt/QtWidgets/qdialog.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/_inttypes.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl3.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h:
@@ -1649,12 +1642,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtGui/qguiapplication.h:
 
-/opt/anaconda3/include/qt/QtGui/qfontmetrics.h:
-
-/opt/anaconda3/include/qt/QtWidgets/qmouseeventtransition.h:
-
-/opt/anaconda3/include/qt/QtGui/qfontinfo.h:
-
 /opt/anaconda3/include/qt/QtGui/qdrag.h:
 
 /opt/anaconda3/include/qt/QtWidgets/qgraphicsanchorlayout.h:
@@ -1669,25 +1656,13 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtGui/qaccessiblebridge.h:
 
-/opt/anaconda3/include/qt/QtGui/qpalette.h:
-
 /opt/anaconda3/include/qt/QtGui/qmovie.h:
 
 /opt/anaconda3/include/qt/QtGui/qtextcursor.h:
 
 /opt/anaconda3/include/qt/QtGui/qtextoption.h:
 
-/opt/anaconda3/include/qt/QtGui/qpixmap.h:
-
-/opt/anaconda3/include/qt/QtGui/qpixelformat.h:
-
-/opt/anaconda3/include/qt/QtGui/qpaintdevice.h:
-
-/opt/anaconda3/include/qt/QtGui/qimage.h:
-
 /opt/anaconda3/include/qt/QtGui/qpen.h:
-
-/opt/anaconda3/include/qt/QtGui/qwindowdefs.h:
 
 /opt/anaconda3/include/qt/QtGui/qevent.h:
 
@@ -1781,27 +1756,15 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtCore/qpointer.h:
 
-/opt/anaconda3/include/qt/QtGui/qtguiglobal.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/generate_canonical.h:
-
-/opt/anaconda3/include/qt/QtCore/qplugin.h:
-
 /opt/anaconda3/include/qt/QtCore/qpauseanimation.h:
 
 /opt/anaconda3/include/qt/QtCore/qmetaobject.h:
 
 /opt/anaconda3/include/qt/QtCore/qmath.h:
 
-/opt/anaconda3/include/qt/QtCore/qmargins.h:
-
 /opt/anaconda3/include/qt/QtCore/qloggingcategory.h:
 
 /opt/anaconda3/include/qt/QtCore/qlinkedlist.h:
-
-/opt/anaconda3/include/qt/QtCore/qpoint.h:
-
-/opt/anaconda3/include/qt/QtCore/qline.h:
 
 /opt/anaconda3/include/qt/QtCore/qlibraryinfo.h:
 
@@ -1842,8 +1805,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 /opt/anaconda3/include/qt/QtCore/QObject:
 
 /opt/anaconda3/include/qt/QtCore/qelapsedtimer.h:
-
-/opt/anaconda3/include/qt/QtCore/qdatastream.h:
 
 /opt/anaconda3/include/qt/QtCore/qcryptographichash.h:
 
@@ -1899,10 +1860,6 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtCore/qabstracttransition.h:
 
-/opt/anaconda3/include/qt/QtCore/qshareddata.h:
-
-/opt/anaconda3/include/qt/QtCore/qabstractproxymodel.h:
-
 /opt/anaconda3/include/qt/QtCore/qvariant.h:
 
 /opt/anaconda3/include/qt/QtCore/qabstractitemmodel.h:
@@ -1912,6 +1869,42 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h:
 
 /opt/anaconda3/include/qt/QtCore/qabstracteventdispatcher.h:
+
+/opt/anaconda3/include/qt/QtCore/qabstractanimation.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/piecewise_linear_distribution.h:
+
+/opt/anaconda3/include/qt/QtCore/QtCoreDepends:
+
+/Users/tranhan/CLionProjects/Projet_TP/include/snakewindow.hpp:
+
+/opt/anaconda3/include/qt/QtWidgets/qmouseeventtransition.h:
+
+/opt/anaconda3/include/qt/QtGui/qfontinfo.h:
+
+/opt/anaconda3/include/qt/QtGui/qfontmetrics.h:
+
+/opt/anaconda3/include/qt/QtCore/qabstractproxymodel.h:
+
+/opt/anaconda3/include/qt/QtCore/qshareddata.h:
+
+/opt/anaconda3/include/qt/QtGui/qpixmap.h:
+
+/opt/anaconda3/include/qt/QtGui/qpixelformat.h:
+
+/opt/anaconda3/include/qt/QtGui/qimage.h:
+
+/opt/anaconda3/include/qt/QtCore/qline.h:
+
+/opt/anaconda3/include/qt/QtCore/qdatastream.h:
+
+/opt/anaconda3/include/qt/QtGui/qpalette.h:
+
+/opt/anaconda3/include/qt/QtCore/qpoint.h:
+
+/opt/anaconda3/include/qt/QtGui/qpaintdevice.h:
+
+/opt/anaconda3/include/qt/QtCore/qmargins.h:
 
 /opt/anaconda3/include/qt/QtCore/qobject_impl.h:
 
@@ -2023,7 +2016,13 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtCore/qobjectdefs_impl.h:
 
-/opt/anaconda3/include/qt/QtCore/qabstractanimation.h:
+/opt/anaconda3/include/qt/QtGui/qwindowdefs.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/xlocale/_inttypes.h:
+
+/opt/anaconda3/include/qt/QtWidgets/qdialog.h:
+
+/opt/anaconda3/include/qt/QtWidgets/qtwidgets-config.h:
 
 /opt/anaconda3/include/qt/QtCore/qversiontagging.h:
 
@@ -2161,11 +2160,13 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtCore/qglobal.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/piecewise_linear_distribution.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/generate_canonical.h:
 
-/opt/anaconda3/include/qt/QtCore/QtCoreDepends:
+/opt/anaconda3/include/qt/QtCore/qplugin.h:
 
-/Users/tranhan/CLionProjects/Projet_TP/include/snakewindow.hpp:
+/opt/anaconda3/include/qt/QtGui/qtguiglobal.h:
+
+/opt/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg:
 
@@ -2743,9 +2744,9 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /opt/anaconda3/include/qt/QtWidgets/qdockwidget.h:
 
-/opt/anaconda3/include/qt/QtWidgets/qwidget.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__random/independent_bits_engine.h:
+
+/opt/anaconda3/include/qt/QtWidgets/qwidget.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/includes.h:
 
@@ -2779,9 +2780,9 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/fill.h:
 
-/opt/anaconda3/include/qt/QtCore/qrect.h:
-
 /opt/anaconda3/include/qt/QtCore/qcborarray.h:
+
+/opt/anaconda3/include/qt/QtCore/qrect.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/upper_bound.h:
 
@@ -3090,6 +3091,8 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: /Users/tranhan/CLionProjects/Projet_T
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/duration.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/promote.h:
+
+/opt/anaconda3/include/qt/QtWidgets/QMessageBox:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_ctype.h:
 

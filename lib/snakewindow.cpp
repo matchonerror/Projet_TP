@@ -1,4 +1,5 @@
 #include <iostream>
+#include <QMessageBox>
 #include "snakewindow.hpp"
 
 using namespace std;

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <cassert>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QDebug>
 #include "jeu.hpp"
 
 using namespace std;
@@ -146,9 +149,37 @@ void Jeu::evolue()
             terrain[posTest.y*largeur+posTest.x]=VIDE;
             ajoutPomme();
         } else{
-            //exit game
-            cout << "Game Over" << endl;
-            exit(0);
+            if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1){
+                if (posTest.x==largeur){
+                    posTest.x = 0;
+                } else if (posTest.x==-1){
+                    posTest.x = largeur-1;
+                } else if (posTest.y==hauteur){
+                    posTest.y = 0;
+                } else if (posTest.y==-1){
+                    posTest.y = hauteur-1;
+                }
+                snake.pop_back();
+                snake.push_front(posTest);
+            } else{
+                //Game over
+                QMessageBox msgBox;
+                msgBox.setWindowTitle("Information");
+                msgBox.setText("Game Over. Do you want to continue?");
+                msgBox.setIcon(QMessageBox::Question);
+                QPushButton *yes_button = msgBox.addButton("Yes", QMessageBox::YesRole);
+                QPushButton *no_button = msgBox.addButton("No", QMessageBox::NoRole);
+
+                msgBox.exec();
+
+                QPushButton *clickedButton = qobject_cast<QPushButton *>(msgBox.clickedButton());
+
+                if (clickedButton == yes_button) {
+                    init();
+                } else {
+                    exit(0);
+                }
+            }
         }
     }
 }
@@ -184,10 +215,6 @@ bool Jeu::posValide(const Position &pos) const
         while (itSnake!=snake.end() && *itSnake!=pos)
             itSnake++;
         return (itSnake==snake.end());
-    }
-    else if (pos.x==largeur || pos.x==-1 || pos.y==hauteur || pos.y==-1)
-    {
-
     }
     else
         return false;
@@ -241,7 +268,6 @@ Position Jeu::getPomme()
 void Jeu::ajoutPomme()
 {
     Position posPomme;
-
     // Trouve une case libre
     do {
         posPomme.x = rand()%largeur;
