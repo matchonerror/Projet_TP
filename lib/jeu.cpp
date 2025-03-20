@@ -130,8 +130,8 @@ void Jeu::evolue()
     Position posTest;
     list<Position>::iterator itSnake;
 
-    int depX[] = {-1, 1, 0, 0};
-    int depY[] = {0, 0, -1, 1};
+    int depX[] = {-1, 1, 0, 0};// valeur pour la direction du serphen selon l'axes X
+    int depY[] = {0, 0, -1, 1};// valeur pour la direction du serphen selon l'axes Y
 
     posTest.x = snake.front().x + depX[dirSnake];
     posTest.y = snake.front().y + depY[dirSnake];
@@ -140,15 +140,34 @@ void Jeu::evolue()
     {
         snake.pop_back();
         snake.push_front(posTest);
-    } else{
+    }
+    else{
         if (terrain[posTest.y*largeur+posTest.x]==POMME){
-            snake.push_front(posTest);
-            terrain[posTest.y*largeur+posTest.x]=VIDE;
-            ajoutPomme();
+            snake.push_front(posTest);// allonger la longeur du serphen
+            terrain[posTest.y*largeur+posTest.x]=VIDE;// vider la position du pomme
+            ajoutPomme();// ajouter du pomme
+
         } else{
-            //exit game
-            cout << "Game Over" << endl;
-            exit(0);
+            if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1)// verifier si la serphen dans la terraine ou pas
+                {
+                if (posTest.x==largeur){
+                    posTest.x = 0;
+                } else if (posTest.x==-1){
+                    posTest.x = largeur-1;
+                } else if (posTest.y==hauteur){
+                    posTest.y = 0;
+                } else if (posTest.y==-1){
+                    posTest.y = hauteur-1;
+                }
+                snake.pop_back();// eliminer la queue du serphen
+                snake.push_front(posTest);// ajouter sa tete
+            } else{
+                //exit game
+                if (*itSnake==posTest) {
+                    cout << "Game Over" << endl;
+                    exit(0);
+                }
+            }
         }
     }
 }
@@ -195,7 +214,7 @@ bool Jeu::posValide(const Position &pos) const
 
 void Jeu::setDirection(Direction dir)
 {
-    dirSnake = dir;
+        dirSnake = dir;
 }
 
 void Jeu::ajoutMur()
