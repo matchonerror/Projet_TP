@@ -146,9 +146,23 @@ void Jeu::evolue()
             terrain[posTest.y*largeur+posTest.x]=VIDE;
             ajoutPomme();
         } else{
-            //exit game
-            cout << "Game Over" << endl;
-            exit(0);
+            if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1){
+                if (posTest.x==largeur){
+                    posTest.x = 0;
+                } else if (posTest.x==-1){
+                    posTest.x = largeur-1;
+                } else if (posTest.y==hauteur){
+                    posTest.y = 0;
+                } else if (posTest.y==-1){
+                    posTest.y = hauteur-1;
+                }
+                snake.pop_back();
+                snake.push_front(posTest);
+            } else{
+                //exit game
+                cout << "Game Over" << endl;
+                exit(0);
+            }
         }
     }
 }
