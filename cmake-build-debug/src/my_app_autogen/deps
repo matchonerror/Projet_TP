@@ -1,0 +1,13 @@
+my_app_autogen/timestamp: \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5/Qt5Config.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
+	/Users/thanhphu/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
+	/Volumes/code/Projet_TP/src/CMakeLists.txt \
+	/Volumes/code/Projet_TP/src/main.cpp \
+	/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake

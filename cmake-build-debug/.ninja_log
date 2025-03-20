@@ -1,0 +1,19 @@
+# ninja log v6
+19	2009	1741650393796449181	lib/CMakeFiles/lib.dir/jeu.cpp.o	8aeb95c1fa623ebc
+3299	3350	1742478928724047525	src/my_app_autogen/timestamp	d612bec340f9c2
+2010	2067	1741650395787211228	lib/liblib.a	8cca69d7d466848
+3299	3350	1742478928724047525	/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/timestamp	d612bec340f9c2
+3299	3350	1742478928724047525	src/my_app_autogen/mocs_compilation.cpp	d612bec340f9c2
+3299	3350	1742478928724047525	/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/mocs_compilation.cpp	d612bec340f9c2
+3350	3378	1742478928775804220	src/CMakeFiles/my_app.dir/my_app_autogen/mocs_compilation.cpp.o	86aaec5cb898a2fb
+3351	5781	1742478928776098623	src/CMakeFiles/my_app.dir/main.cpp.o	cafc6a5699365a21
+11	3263	1742478925436606820	lib/CMakeFiles/lib2.dir/snakewindow.cpp.o	34a060f813cbc05a
+3263	3299	1742478928688260095	lib/liblib2.a	2cd2a9478b9026f
+11	1493	1742478925436104553	lib/CMakeFiles/lib1.dir/jeu.cpp.o	3e8ff3a4a771cbe1
+1494	1554	1742478926919155309	lib/liblib1.a	979ba420955b260d
+5781	5829	1742478931206642383	src/my_app	a0d055bc97ba882d
+18	49	1742479567021876849	src/my_app_autogen/timestamp	d612bec340f9c2
+18	49	1742479567021876849	src/my_app_autogen/mocs_compilation.cpp	d612bec340f9c2
+18	49	1742479567021876849	/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/timestamp	d612bec340f9c2
+18	49	1742479567021876849	/Volumes/code/Projet_TP/cmake-build-debug/src/my_app_autogen/mocs_compilation.cpp	d612bec340f9c2
+49	102	1742479567052401826	src/my_app	dc62b34279a25c47
