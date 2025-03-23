@@ -3,6 +3,7 @@
 
 #include <QtCore/QtCore>
 #include <QtWidgets/QtWidgets>
+
 #include "jeu.hpp"
 
 class SnakeWindow : public QFrame

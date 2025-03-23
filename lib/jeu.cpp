@@ -29,6 +29,7 @@ Jeu::Jeu()
     terrain = nullptr;
     largeur = 0; hauteur = 0;
     dirSnake = DROITE;
+    score=0;
 }
 
 Jeu::Jeu(const Jeu &jeu):snake(jeu.snake)
@@ -36,6 +37,7 @@ Jeu::Jeu(const Jeu &jeu):snake(jeu.snake)
     largeur = jeu.largeur;
     hauteur = jeu.hauteur;
     dirSnake = jeu.dirSnake;
+
 
     if (jeu.terrain!=nullptr)
     {
@@ -47,7 +49,7 @@ Jeu::Jeu(const Jeu &jeu):snake(jeu.snake)
         terrain = nullptr;
 }
 
-Jeu::~Jeu()
+Jeu::~Jeu()// destructeur
 {
     if (terrain!=nullptr)
         delete[] terrain;
@@ -77,8 +79,8 @@ Jeu &Jeu::operator=(const Jeu &jeu)
 bool Jeu::init()
 {
     int x, y;
-    // list<Position>::iterator itSnake;
-
+    list<Position>::iterator itSnake;
+    score=0;
     const char terrain_defaut[15][21] = {
             "####..##############",
             "#........##........#",
@@ -146,7 +148,7 @@ void Jeu::evolue()
             snake.push_front(posTest);// allonger la longeur du serphen
             terrain[posTest.y*largeur+posTest.x]=VIDE;// vider la position du pomme
             ajoutPomme();// ajouter du pomme
-
+            score +=10;
         } else{
             if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1)// verifier si la serphen dans la terraine ou pas
                 {
@@ -164,7 +166,7 @@ void Jeu::evolue()
             } else{
                 //exit game
                 if (*itSnake==posTest) {
-                    cout << "Game Over" << endl;
+                    cout << "Game Over" << endl;// verifier si la serphene lui frapper ou pas
                     exit(0);
                 }
             }
@@ -205,18 +207,22 @@ bool Jeu::posValide(const Position &pos) const
         return (itSnake==snake.end());
     }
     else if (pos.x==largeur || pos.x==-1 || pos.y==hauteur || pos.y==-1)
-    {
-
-    }
-    else
+    {}
+    else {}
         return false;
 }
 
 void Jeu::setDirection(Direction dir)
 {
+    // Empêche la serphen  à ne frappe pas sur lui-meme
+    if ((dir == GAUCHE && dirSnake != DROITE) ||
+        (dir == DROITE && dirSnake != GAUCHE) ||
+        (dir == HAUT && dirSnake != BAS) ||
+        (dir == BAS && dirSnake != HAUT))
+    {
         dirSnake = dir;
+    }
 }
-
 void Jeu::ajoutMur()
 {
     Position posMur;
@@ -267,4 +273,9 @@ void Jeu::ajoutPomme()
         posPomme.y = rand()%hauteur;
     } while (!posValide(posPomme));
     terrain[posPomme.y*largeur+posPomme.x]=POMME;
+}
+
+int Jeu::getScore() const
+{
+    return score;
 }
