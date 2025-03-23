@@ -35,7 +35,7 @@ SnakeWindow::SnakeWindow(QWidget *pParent, Qt::WindowFlags flags):QFrame(pParent
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &SnakeWindow::handleTimer);
-    timer->start(1000);
+    timer->start(150);
 
     SnakeButton *btnAjout = new SnakeButton(this);
     btnAjout->setFixedSize(100, 25);
@@ -57,8 +57,7 @@ SnakeWindow::SnakeWindow(QWidget *pParent, Qt::WindowFlags flags):QFrame(pParent
     resize(jeu.getNbCasesX()*largeurCase, jeu.getNbCasesY()*hauteurCase+decalageY);
 }
 
-void SnakeWindow::paintEvent(QPaintEvent *)
-{
+void SnakeWindow::paintEvent(QPaintEvent *) {
     QPainter painter(this);
 
     Position pos;
@@ -90,8 +89,17 @@ void SnakeWindow::paintEvent(QPaintEvent *)
     // Dessine la pomme
     Position posPomme = jeu.getPomme();
     painter.drawPixmap(posPomme.x*largeurCase, posPomme.y*hauteurCase+decalageY, pixmapPomme);
-}
 
+    //Afficher le score
+
+    painter.setPen(Qt::white);
+    painter.setFont(QFont("Arial",16));
+    // painter.drawText(500,30,"Score:" + QString::number(jeu.getScore()));
+    QRect rectangle(500, 10, 100.0, 30.0);
+    painter.drawRoundRect(rectangle,60,90);
+    painter.drawText(rectangle,Qt::AlignCenter,"Score:"+ QString::number(jeu.getScore()));
+
+}
 void SnakeWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key()==Qt::Key_Left)

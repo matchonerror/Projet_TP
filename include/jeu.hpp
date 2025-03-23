@@ -23,6 +23,7 @@ protected:
     int largeur, hauteur; // Nombre de cases en largeur et en hauteur
     std::list<Position> snake;
     Direction dirSnake;
+    int score;
 
 public:
     Jeu();
@@ -55,6 +56,9 @@ public:
 
     Position getPomme();
     void ajoutPomme();
+
+    //Retourn la score
+    int getScore()  const;
 };
 
 #endif
