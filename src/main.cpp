@@ -1,4 +1,5 @@
 #include <ctime>
+
 #include "snakewindow.hpp"
 
 using namespace std;
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
 
     SnakeWindow wnd;
     wnd.show();
+
 
     return app.exec();
 }

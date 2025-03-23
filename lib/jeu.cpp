@@ -216,9 +216,9 @@ void Jeu::setDirection(Direction dir)
 {
     // Empêche la serphen  à ne frappe pas sur lui-meme
     if ((dir == GAUCHE && dirSnake != DROITE) ||
-        (dir == DROITE && dirSnake != GAUCHE) ||
-        (dir == HAUT && dirSnake != BAS) ||
-        (dir == BAS && dirSnake != HAUT))
+        (dir == DROITE && dirSnake != GAUCHE ) ||
+        (dir == HAUT && dirSnake != BAS ) ||
+        (dir == BAS && dirSnake != HAUT ))
     {
         dirSnake = dir;
     }

@@ -94,8 +94,10 @@ void SnakeWindow::paintEvent(QPaintEvent *) {
 
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial",16));
+    // Dessiner la score sans rectangle
     // painter.drawText(500,30,"Score:" + QString::number(jeu.getScore()));
     QRect rectangle(500, 10, 100.0, 30.0);
+    // Dessiner la socre avec rectangle
     painter.drawRoundRect(rectangle,60,90);
     painter.drawText(rectangle,Qt::AlignCenter,"Score:"+ QString::number(jeu.getScore()));
 
@@ -129,4 +131,15 @@ void SnakeWindow::handleButtonSuppr()
 {
     jeu.suppressionMur();
     update();
+}
+
+void SnakeWindow::updateInterval() {
+    // mis a jour la vitess
+    int nInterval = 150 - (jeu.getScore() * 5); // nouvelle intervale = initial interval- score*5
+    if (nInterval < 50) {
+        nInterval = 50;
+    }
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &SnakeWindow::handleTimer);
+    timer->setInterval(nInterval);
 }
