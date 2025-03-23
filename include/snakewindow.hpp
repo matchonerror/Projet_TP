@@ -4,13 +4,14 @@
 #include <QtCore/QtCore>
 #include <QtWidgets/QtWidgets>
 
+
 #include "jeu.hpp"
 
 class SnakeWindow : public QFrame
 {
 protected:
     Jeu jeu;
-    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme;
+    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme, pixmapCadeau;
     int decalageY;
 
 public:
@@ -22,6 +23,8 @@ protected:
     void handleTimer();
     void handleButtonAjout();
     void handleButtonSuppr();
+    void updateInterval();
+    void handleCadeauTimer();
 };
 
 class SnakeButton : public QPushButton

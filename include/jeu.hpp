@@ -3,7 +3,7 @@
 
 #include <list>
 
-typedef enum {VIDE, MUR, POMME} Case;
+typedef enum {VIDE, MUR, POMME, CADEAU} Case;
 typedef enum {GAUCHE, DROITE, HAUT, BAS} Direction;
 
 class Position
@@ -24,6 +24,8 @@ protected:
     std::list<Position> snake;
     Direction dirSnake;
     int score;
+    int cadTimer;
+    int pTimer;
 
 public:
     Jeu();
@@ -51,11 +53,22 @@ public:
     // Modifie la direction
     void setDirection(Direction);
 
+    // Ajoute la mur
     void ajoutMur();
     void suppressionMur();
 
+    // Ajout la pomme
     Position getPomme();
     void ajoutPomme();
+
+
+    //Ajout la cadeau
+    Position getCadeau();
+    void ajoutCadeau();
+
+    // Retourne  la temp pour la cadeaiu
+
+    int getcadTimer() const;
 
     //Retourn la score
     int getScore()  const;

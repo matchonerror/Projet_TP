@@ -113,8 +113,13 @@ bool Jeu::init()
 
     int longueurSerpent = 5;
     snake.clear();
+
     //ajoutPomme
     ajoutPomme();
+    ajoutCadeau();
+    cadTimer=30;// 30*0.15=4.5 seconds pour la cadeau
+    pTimer=0;
+
     Position posTete;
     posTete.x = 15;
     posTete.y = 8;
@@ -127,8 +132,7 @@ bool Jeu::init()
     return true;
 }
 
-void Jeu::evolue()
-{
+void Jeu::evolue() {
     Position posTest;
     list<Position>::iterator itSnake;
 
@@ -151,7 +155,7 @@ void Jeu::evolue()
             score +=10;
         } else{
             if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1)// verifier si la serphen dans la terraine ou pas
-                {
+            {
                 if (posTest.x==largeur){
                     posTest.x = 0;
                 } else if (posTest.x==-1){
@@ -163,7 +167,21 @@ void Jeu::evolue()
                 }
                 snake.pop_back();// eliminer la queue du serphen
                 snake.push_front(posTest);// ajouter sa tete
-            } else{
+            }
+
+            else if (terrain[posTest.y*largeur+posTest.x]==CADEAU) {
+                snake.push_front(posTest);
+                snake.push_front(posTest);
+                terrain[posTest.y*largeur+posTest.x] = VIDE;
+
+                score += 20;
+
+                cadTimer=0;
+                pTimer=30;
+                // ajout le cadeau et quand le serphent mangage le cadeau sa score va +20 et aussi sa longeur +2 unitée,et dermarrer la pause=30*0.15=4.5s
+
+            }
+            else{
                 //exit game
                 if (*itSnake==posTest) {
                     cout << "Game Over" << endl;// verifier si la serphene lui frapper ou pas
@@ -172,8 +190,35 @@ void Jeu::evolue()
             }
         }
     }
-}
 
+    Position poscad=getCadeau();
+    if (poscad.x!=-1 && poscad.y!=-1)
+    {
+        // si la cadeau apparait sur la terrain
+        if (cadTimer>0) {
+            cadTimer--;
+            if (cadTimer==0) {
+                for (int y=0;y<hauteur;y++) {
+                    for (int x=0; x<largeur;x++) {
+                        if (terrain[y*largeur +x] == CADEAU) {
+                            terrain[y*largeur +x] = VIDE;
+                        }
+                    }
+                }
+            }
+        }
+
+        pTimer=50; // atteindre 50*0.15=7.5s
+    }
+    else if (pTimer>0){
+        pTimer--;
+        if (pTimer<=0) {
+            ajoutCadeau();
+            cadTimer=30;// le cadeau va appraret en 30*0.15=4.5s
+
+        }
+    }
+}
 int Jeu::getNbCasesX() const
 {
     return largeur;
@@ -216,9 +261,9 @@ void Jeu::setDirection(Direction dir)
 {
     // Empêche la serphen  à ne frappe pas sur lui-meme
     if ((dir == GAUCHE && dirSnake != DROITE) ||
-        (dir == DROITE && dirSnake != GAUCHE) ||
-        (dir == HAUT && dirSnake != BAS) ||
-        (dir == BAS && dirSnake != HAUT))
+        (dir == DROITE && dirSnake != GAUCHE ) ||
+        (dir == HAUT && dirSnake != BAS ) ||
+        (dir == BAS && dirSnake != HAUT ))
     {
         dirSnake = dir;
     }
@@ -274,6 +319,41 @@ void Jeu::ajoutPomme()
     } while (!posValide(posPomme));
     terrain[posPomme.y*largeur+posPomme.x]=POMME;
 }
+
+Position Jeu::getCadeau(){
+    Position posCad;
+
+    posCad.x=-1;// position d'initilisation du cadeau
+    posCad.y=-1;
+    for (int y=0; y<hauteur; y++)
+        for (int x=0; x<largeur; x++)
+            if (terrain[y*largeur+x]==CADEAU)
+            {
+                posCad.x = x;
+                posCad.y = y;
+            }
+    return posCad;
+}
+
+
+void Jeu::ajoutCadeau() {
+    Position posCad;
+
+
+    //Trouve un Cadeau
+    do {
+        posCad.x=rand() %largeur;
+        posCad.y=rand() %hauteur;
+    }while (!posValide(posCad));
+    terrain[posCad.y*largeur+posCad.x]=CADEAU;
+
+}
+
+int Jeu::getcadTimer() const {
+    return static_cast<int>(cadTimer);//temps en seconds  mais  * temps per evelue()=0.15s
+}
+
+
 
 int Jeu::getScore() const
 {

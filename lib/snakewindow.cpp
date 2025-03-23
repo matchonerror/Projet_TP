@@ -27,15 +27,22 @@ SnakeWindow::SnakeWindow(QWidget *pParent, Qt::WindowFlags flags):QFrame(pParent
     }
     if (pixmapPomme.load("./data/pomme.png")==false)
     {
-        cout<<"Impossible d'ouvrir mur.bmp"<<endl;
+        cout<<"Impossible d'ouvrir pomme.png"<<endl;
         exit(-1);
     }
+
+
+    if (pixmapCadeau.load("./data/cadeau.jpg") == false) {
+        cout<<"Impossible d'ouvrir cadeau.jpg"<<endl;
+        exit(-1);
+    }
+
 
     jeu.init();
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &SnakeWindow::handleTimer);
-    timer->start(150);
+    timer->start(150);// equivalenet evolue() va etre appele chaque 0.15s ->ticks=0.15
 
     SnakeButton *btnAjout = new SnakeButton(this);
     btnAjout->setFixedSize(100, 25);
@@ -90,14 +97,34 @@ void SnakeWindow::paintEvent(QPaintEvent *) {
     Position posPomme = jeu.getPomme();
     painter.drawPixmap(posPomme.x*largeurCase, posPomme.y*hauteurCase+decalageY, pixmapPomme);
 
+    //Dessine la Cadeau
+    Position posCad = jeu.getCadeau();
+    painter.drawPixmap(posCad.x*largeurCase, posCad.y*hauteurCase+decalageY, pixmapCadeau);
+
     //Afficher le score
 
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial",16));
+
+
+    // Dessiner la score sans rectangle
     // painter.drawText(500,30,"Score:" + QString::number(jeu.getScore()));
     QRect rectangle(500, 10, 100.0, 30.0);
-    painter.drawRoundRect(rectangle,60,90);
+    // Dessiner la socre avec rectangle
+    painter. drawRoundedRect(rectangle,60,90);
     painter.drawText(rectangle,Qt::AlignCenter,"Score:"+ QString::number(jeu.getScore()));
+
+    // Dessiner le compte à countdown
+    if (posCad.x!=-1 && posCad.y != -1) {
+        QString countdown=QString::number(jeu.getcadTimer());
+        painter.setFont(QFont("Arial",12));
+        painter.setPen(Qt::red);
+        QRect rectangle(250, 10, 200.0, 30.0);
+        painter. drawRoundedRect(rectangle,60,45);
+        painter.drawText(rectangle,Qt::AlignCenter," Cadeau:"+ countdown);
+
+    }
+
 
 }
 void SnakeWindow::keyPressEvent(QKeyEvent *event)
@@ -129,4 +156,15 @@ void SnakeWindow::handleButtonSuppr()
 {
     jeu.suppressionMur();
     update();
+}
+
+void SnakeWindow::updateInterval() {
+    // mis a jour la vitess
+    int nInterval = 150 - (jeu.getScore() * 5); // nouvelle intervale = initial interval- score*5
+    if (nInterval < 50) {
+        nInterval = 50;
+    }
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &SnakeWindow::handleTimer);
+    timer->setInterval(nInterval);
 }
