@@ -145,7 +145,7 @@ void Jeu::evolue()
                 //Game over
                 QMessageBox msgBox;
                 msgBox.setWindowTitle("Information");
-                msgBox.setText("Game Over. Do you want to continue?");
+                msgBox.setText(QString("Game Over. Your score is: %1. Do you want to continue?").arg(score));
                 msgBox.setIcon(QMessageBox::Question);
                 QPushButton *yes_button = msgBox.addButton("Yes", QMessageBox::YesRole);
                 QPushButton *no_button = msgBox.addButton("No", QMessageBox::NoRole);
