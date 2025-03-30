@@ -9,7 +9,7 @@ class SnakeWindow : public QFrame
 {
 protected:
     Jeu jeu;
-    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme, pixmapPortal;
+    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme, pixmapPortal,pixmapCadeau;
     int decalageY;
 
 public:
@@ -22,6 +22,8 @@ protected:
     void handleButtonAjout();
     void handleButtonSuppr();
     void showGameOverMessage();
+    void updateInterval();
+    void handleCadeauTimer();
 };
 
 class SnakeButton : public QPushButton

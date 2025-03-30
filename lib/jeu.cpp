@@ -113,6 +113,7 @@ void Jeu::evolue()
             snake.push_front(posTest);
             terrain[posTest.y*largeur+posTest.x]=VIDE;
             ajoutPomme();
+            score+=10;
         } else if (terrain[posTest.y*largeur+posTest.x]==PORTAL)
         {
             nextLevel();
@@ -129,6 +130,17 @@ void Jeu::evolue()
                 }
                 snake.pop_back();
                 snake.push_front(posTest);
+            } else if (terrain[posTest.y*largeur+posTest.x]==CADEAU) {
+                snake.push_front(posTest);
+                snake.push_front(posTest);
+                terrain[posTest.y*largeur+posTest.x] = VIDE;
+
+                score += 20;
+
+                cadTimer=0;
+                pTimer=30;
+                // ajout le cadeau et quand le serphent mangage le cadeau sa score va +20 et aussi sa longeur +2 unitée,et dermarrer la pause=30*0.15=4.5s
+
             } else{
                 //Game over
                 QMessageBox msgBox;
@@ -148,6 +160,33 @@ void Jeu::evolue()
                     exit(0);
                 }
             }
+        }
+    }
+    Position poscad=getCadeau();
+    if (poscad.x!=-1 && poscad.y!=-1)
+    {
+        // si la cadeau apparait sur la terrain
+        if (cadTimer>0) {
+            cadTimer--;
+            if (cadTimer==0) {
+                for (int y=0;y<hauteur;y++) {
+                    for (int x=0; x<largeur;x++) {
+                        if (terrain[y*largeur +x] == CADEAU) {
+                            terrain[y*largeur +x] = VIDE;
+                        }
+                    }
+                }
+            }
+        }
+
+        pTimer=50; // atteindre 50*0.15=7.5s
+    }
+    else if (pTimer>0){
+        pTimer--;
+        if (pTimer<=0) {
+            ajoutCadeau();
+            cadTimer=30;// le cadeau va appraret en 30*0.15=4.5s
+
         }
     }
 }
@@ -249,6 +288,41 @@ void Jeu::ajoutPomme()
     terrain[posPomme.y*largeur+posPomme.x]=POMME;
 }
 
+Position Jeu::getCadeau(){
+    Position posCad;
+
+    posCad.x=-1;// position d'initilisation du cadeau
+    posCad.y=-1;
+    for (int y=0; y<hauteur; y++)
+        for (int x=0; x<largeur; x++)
+            if (terrain[y*largeur+x]==CADEAU)
+            {
+                posCad.x = x;
+                posCad.y = y;
+            }
+    return posCad;
+}
+
+
+void Jeu::ajoutCadeau() {
+    Position posCad;
+    //Trouve un Cadeau
+    do {
+        posCad.x=rand() %largeur;
+        posCad.y=rand() %hauteur;
+    }while (!posValide(posCad));
+    terrain[posCad.y*largeur+posCad.x]=CADEAU;
+}
+
+int Jeu::getcadTimer() const {
+    return static_cast<int>(cadTimer);//temps en seconds  mais  * temps per evelue()=0.15s
+}
+
+int Jeu::getScore() const
+{
+    return score;
+}
+
 Position Jeu::getPortal()
 {
     Position posPortal;
@@ -311,21 +385,21 @@ void Jeu::loadMap(int mapNumber, Direction direction)
             break;
         case 3:
             terrain_defaut =
-                    "...................."
-                    "...####......####..."
-                    "...####......####..."
-                    "...####......####..."
-                    "...................."
-                    "...................."
-                    "...####......####..."
-                    "...####......####..."
-                    "...####......####..."
-                    "...................."
-                    "...................."
-                    "...####......####..."
-                    "...####......####..."
-                    "...####......####..."
-                    "....................";
+                "...................."
+                "...####......####..."
+                "...####......####..."
+                "...####......####..."
+                "...................."
+                "...................."
+                "...####......####..."
+                "...####......####..."
+                "...####......####..."
+                "...................."
+                "...................."
+                "...####......####..."
+                "...####......####..."
+                "...####......####..."
+                "....................";
             break;
         default:
             return;

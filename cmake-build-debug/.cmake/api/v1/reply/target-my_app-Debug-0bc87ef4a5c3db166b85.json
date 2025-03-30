@@ -141,16 +141,16 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 0,
+			"id" : "my_app_autogen::@145eef247bfb46b6828c"
+		},
+		{
 			"backtrace" : 2,
 			"id" : "lib1::@306ed2d68c6501e8728f"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "lib2::@306ed2d68c6501e8728f"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "my_app_autogen::@145eef247bfb46b6828c"
 		}
 	],
 	"id" : "my_app::@145eef247bfb46b6828c",

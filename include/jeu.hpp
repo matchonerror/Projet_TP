@@ -3,7 +3,7 @@
 
 #include <list>
 
-typedef enum {VIDE, MUR, POMME, PORTAL} Case;
+typedef enum {VIDE, MUR, POMME, PORTAL, CADEAU} Case;
 typedef enum {GAUCHE, DROITE, HAUT, BAS} Direction;
 
 class Position
@@ -23,8 +23,15 @@ protected:
     int largeur, hauteur; // Nombre de cases en largeur et en hauteur
     std::list<Position> snake;
     Direction dirSnake;
+
+    //gestion portal
     int applesEaten;
     int currentMap;
+
+    //cadeau et score
+    int score;
+    int cadTimer;
+    int pTimer;
 
 public:
     Jeu();
@@ -60,11 +67,21 @@ public:
     Position getPomme();
     void ajoutPomme();
 
+    //Ajout la cadeau
+    Position getCadeau();
+    void ajoutCadeau();
+
+    // Retourne  la temp pour la cadeau
+    int getcadTimer() const;
+
+    //Retourn la score
+    int getScore()  const;
+
+    //gestion portal entre les niveaux
     void loadMap(int, Direction);
     void createPortal();
     Position getPortal();
     void nextLevel();
-
 };
 
 #endif
