@@ -106,7 +106,7 @@ void Jeu::evolue()
     } else{
         if (terrain[posTest.y*largeur+posTest.x]==POMME){
             applesEaten++;
-            if (applesEaten == 5)
+            if (applesEaten >=5)
             {
                 createPortal();
             }
@@ -423,6 +423,7 @@ void Jeu::loadMap(int mapNumber, Direction direction)
     int longueurSerpent = 5;
     snake.clear();
     ajoutPomme();
+    ajoutCadeau();
     Position posTete;
     posTete.x = 15;
     posTete.y = 8;
