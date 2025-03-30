@@ -9,7 +9,7 @@ class SnakeWindow : public QFrame
 {
 protected:
     Jeu jeu;
-    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme;
+    QPixmap pixmapCorps, pixmapTete, pixmapMur, pixmapPomme, pixmapPortal;
     int decalageY;
 
 public:

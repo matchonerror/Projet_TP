@@ -1,12 +1,12 @@
 {
-	"BUILD_DIR" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/my_app_autogen",
-	"CMAKE_BINARY_DIR" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/tranhan/CLionProjects/Projet_TP/src",
+	"BUILD_DIR" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/my_app_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/tranhan/CLionProjects/Projet_f/src",
 	"CMAKE_EXECUTABLE" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/Users/tranhan/CLionProjects/Projet_TP/src/CMakeLists.txt",
+		"/Users/tranhan/CLionProjects/Projet_f/src/CMakeLists.txt",
 		"/opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake",
 		"/opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -46,13 +46,13 @@
 		"/opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseArguments.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/Users/tranhan/CLionProjects/Projet_TP",
+	"CMAKE_SOURCE_DIR" : "/Users/tranhan/CLionProjects/Projet_f",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/my_app_autogen/include",
-	"MOC_COMPILATION_FILE" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/my_app_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/my_app_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/my_app_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -63,7 +63,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/Users/tranhan/CLionProjects/Projet_TP/include",
+		"/Users/tranhan/CLionProjects/Projet_f/include",
 		"/opt/anaconda3/include/qt",
 		"/opt/anaconda3/include/qt/QtCore",
 		"/opt/anaconda3/mkspecs/macx-clang",
@@ -84,20 +84,20 @@
 		"-c",
 		"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/my_app_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/my_app_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/CMakeFiles/my_app_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/CMakeFiles/my_app_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/opt/anaconda3/bin/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/CMakeFiles/my_app_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/CMakeFiles/my_app_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/Users/tranhan/CLionProjects/Projet_TP/src/main.cpp", "Mu", null ]
+		[ "/Users/tranhan/CLionProjects/Projet_f/src/main.cpp", "Mu", null ]
 	],
 	"VERBOSITY" : 0
 }

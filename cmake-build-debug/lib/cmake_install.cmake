@@ -1,4 +1,4 @@
-# Install script for directory: /Users/tranhan/CLionProjects/Projet_TP/lib
+# Install script for directory: /Users/tranhan/CLionProjects/Projet_f/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

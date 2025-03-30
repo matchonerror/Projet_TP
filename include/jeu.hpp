@@ -3,7 +3,7 @@
 
 #include <list>
 
-typedef enum {VIDE, MUR, POMME} Case;
+typedef enum {VIDE, MUR, POMME, PORTAL} Case;
 typedef enum {GAUCHE, DROITE, HAUT, BAS} Direction;
 
 class Position
@@ -23,6 +23,8 @@ protected:
     int largeur, hauteur; // Nombre de cases en largeur et en hauteur
     std::list<Position> snake;
     Direction dirSnake;
+    int applesEaten;
+    int currentMap;
 
 public:
     Jeu();
@@ -49,6 +51,8 @@ public:
 
     // Modifie la direction
     void setDirection(Direction);
+    //get direction
+    Direction getDirection();
 
     void ajoutMur();
     void suppressionMur();
@@ -56,6 +60,10 @@ public:
     Position getPomme();
     void ajoutPomme();
 
+    void loadMap(int, Direction);
+    void createPortal();
+    Position getPortal();
+    void nextLevel();
 
 };
 

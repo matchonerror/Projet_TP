@@ -21,14 +21,19 @@ SnakeWindow::SnakeWindow(QWidget *pParent, Qt::WindowFlags flags):QFrame(pParent
         exit(-1);
     }
 
-    if (pixmapMur.load("./data/mur.bmp")==false)
+    if (pixmapMur.load("./data/mur.png")==false)
     {
-        cout<<"Impossible d'ouvrir mur.bmp"<<endl;
+        cout<<"Impossible d'ouvrir mur.png"<<endl;
         exit(-1);
     }
     if (pixmapPomme.load("./data/pomme.png")==false)
     {
         cout<<"Impossible d'ouvrir mur.bmp"<<endl;
+        exit(-1);
+    }
+    if (pixmapPortal.load("./data/portal.png")==false)
+    {
+        cout<<"Impossible d'ouvrir portal.png"<<endl;
         exit(-1);
     }
 
@@ -91,17 +96,23 @@ void SnakeWindow::paintEvent(QPaintEvent *)
     // Dessine la pomme
     Position posPomme = jeu.getPomme();
     painter.drawPixmap(posPomme.x*largeurCase, posPomme.y*hauteurCase+decalageY, pixmapPomme);
+
+    // Dessine le portal
+    Position posPortal = jeu.getPortal();
+    painter.drawPixmap(posPortal.x*largeurCase, posPortal.y*hauteurCase+decalageY, pixmapPortal);
 }
 
 void SnakeWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key()==Qt::Key_Left)
+    Direction currentDirection = jeu.getDirection();
+
+    if (event->key() == Qt::Key_Left && currentDirection != DROITE)
         jeu.setDirection(GAUCHE);
-    else if (event->key()==Qt::Key_Right)
+    else if (event->key() == Qt::Key_Right && currentDirection != GAUCHE)
         jeu.setDirection(DROITE);
-    else if (event->key()==Qt::Key_Up)
+    else if (event->key() == Qt::Key_Up && currentDirection != BAS)
         jeu.setDirection(HAUT);
-    else if (event->key()==Qt::Key_Down)
+    else if (event->key() == Qt::Key_Down && currentDirection != HAUT)
         jeu.setDirection(BAS);
     update();
 }

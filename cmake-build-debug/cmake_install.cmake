@@ -1,4 +1,4 @@
-# Install script for directory: /Users/tranhan/CLionProjects/Projet_TP
+# Install script for directory: /Users/tranhan/CLionProjects/Projet_f
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/lib/cmake_install.cmake")
+  include("/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/src/cmake_install.cmake")
+  include("/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/src/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/tranhan/CLionProjects/Projet_TP/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/tranhan/CLionProjects/Projet_f/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

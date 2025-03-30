@@ -81,50 +81,10 @@ bool Jeu::init()
 {
     int x, y;
     // list<Position>::iterator itSnake;
-
-    const char terrain_defaut[15][21] = {
-            "####..##############",
-            "#........##........#",
-            "#.#####..##...####.#",
-            "#........##........#",
-            "#..................#",
-            "#..................#",
-            "....................",
-            "....................",
-            "....................",
-            "....................",
-            "#..................#",
-            "#..................#",
-            "#.....#......#.....#",
-            "#.....#......#.....#",
-            "####..##############"
-    };
-
-    largeur = 20;
-    hauteur = 15;
-
-    terrain = new Case[largeur*hauteur];
-
-    for(y=0;y<hauteur;++y)
-        for(x=0;x<largeur;++x)
-            if (terrain_defaut[y][x]=='#')
-                terrain[y*largeur+x] = MUR;
-            else
-                terrain[y*largeur+x] = VIDE;
-
-    int longueurSerpent = 5;
-    snake.clear();
-    //ajoutPomme
-    ajoutPomme();
-    Position posTete;
-    posTete.x = 15;
-    posTete.y = 8;
-    for (int i=0; i<longueurSerpent; i++)
-    {
-        snake.push_back(posTete);
-        posTete.x--;
-    }
-
+    applesEaten = 0;
+    currentMap = 1;
+    dirSnake = DROITE;
+    loadMap(currentMap, dirSnake);
     return true;
 }
 
@@ -145,10 +105,18 @@ void Jeu::evolue()
         snake.push_front(posTest);
     } else{
         if (terrain[posTest.y*largeur+posTest.x]==POMME){
+            applesEaten++;
+            if (applesEaten == 5)
+            {
+                createPortal();
+            }
             snake.push_front(posTest);
             terrain[posTest.y*largeur+posTest.x]=VIDE;
             ajoutPomme();
-        } else{
+        } else if (terrain[posTest.y*largeur+posTest.x]==PORTAL)
+        {
+            nextLevel();
+        } else {
             if (posTest.x==largeur || posTest.x==-1 || posTest.y==hauteur || posTest.y==-1){
                 if (posTest.x==largeur){
                     posTest.x = 0;
@@ -205,6 +173,7 @@ const list<Position> &Jeu::getSnake() const
     return snake;
 }
 
+
 bool Jeu::posValide(const Position &pos) const
 {
     if (pos.x>=0 && pos.x<largeur && pos.y>=0 && pos.y<hauteur
@@ -223,6 +192,10 @@ bool Jeu::posValide(const Position &pos) const
 void Jeu::setDirection(Direction dir)
 {
     dirSnake = dir;
+}
+Direction Jeu::getDirection()
+{
+    return dirSnake;
 }
 
 void Jeu::ajoutMur()
@@ -274,4 +247,145 @@ void Jeu::ajoutPomme()
         posPomme.y = rand()%hauteur;
     } while (!posValide(posPomme));
     terrain[posPomme.y*largeur+posPomme.x]=POMME;
+}
+
+Position Jeu::getPortal()
+{
+    Position posPortal;
+    posPortal.x = -1;
+    posPortal.y = -1;
+
+    for (int y=0; y<hauteur; y++)
+        for (int x=0; x<largeur; x++)
+            if (terrain[y*largeur+x]==PORTAL)
+            {
+                posPortal.x = x;
+                posPortal.y = y;
+            }
+    return posPortal;
+}
+
+void Jeu::loadMap(int mapNumber, Direction direction)
+{
+    int x, y;
+    const char *terrain_defaut;
+    //set direction
+    dirSnake = direction;
+    switch (mapNumber)
+    {
+        case 1:
+            terrain_defaut =
+                "####..##############"
+                "#........##........#"
+                "#.#####..##...####.#"
+                "#........##........#"
+                "#..................#"
+                "#..................#"
+                "...................."
+                "...................."
+                "...................."
+                "...................."
+                "#..................#"
+                "#..................#"
+                "#.....#......#.....#"
+                "#.....#......#.....#"
+                "####..##############";
+            break;
+        case 2:
+            terrain_defaut =
+                "...................."
+                "...##..........##..."
+                "....##........##...."
+                ".....##......##....."
+                "......##....##......"
+                ".......##..##......."
+                "........####........"
+                "...................."
+                "........####........"
+                ".......##..##......."
+                "......##....##......"
+                ".....##......##....."
+                "....##........##...."
+                "...##..........##..."
+                "....................";
+            break;
+        case 3:
+            terrain_defaut =
+                    "...................."
+                    "...####......####..."
+                    "...####......####..."
+                    "...####......####..."
+                    "...................."
+                    "...................."
+                    "...####......####..."
+                    "...####......####..."
+                    "...####......####..."
+                    "...................."
+                    "...................."
+                    "...####......####..."
+                    "...####......####..."
+                    "...####......####..."
+                    "....................";
+            break;
+        default:
+            return;
+    }
+
+    largeur = 20;
+    hauteur = 15;
+
+    if (terrain != nullptr)
+        delete[] terrain;
+
+    terrain = new Case[largeur * hauteur];
+
+    for (y = 0; y < hauteur; ++y)
+        for (x = 0; x < largeur; ++x)
+            if (terrain_defaut[y * largeur + x] == '#')
+                terrain[y * largeur + x] = MUR;
+            else
+                terrain[y * largeur + x] = VIDE;
+
+    int longueurSerpent = 5;
+    snake.clear();
+    ajoutPomme();
+    Position posTete;
+    posTete.x = 15;
+    posTete.y = 8;
+    for (int i = 0; i < longueurSerpent; i++)
+    {
+        snake.push_back(posTete);
+        posTete.x--;
+    }
+}
+
+void Jeu::createPortal()
+{
+    Position posPortal;
+    bool found = false;
+    int attempts = 0;
+
+    while (!found && attempts < 100) { // Giới hạn số lần thử
+        posPortal.x = rand() % largeur;
+        posPortal.y = rand() % hauteur;
+        if (posValide(posPortal)) {
+            found = true;
+        }
+        attempts++;
+    }
+
+    if (found) {
+        terrain[posPortal.y * largeur + posPortal.x] = PORTAL;
+        qDebug() << "Portal created at (" << posPortal.x << "," << posPortal.y << ")";
+    } else {
+        qDebug() << "Failed to create portal!";
+    }
+}
+
+
+void Jeu::nextLevel()
+{
+    currentMap++;
+    loadMap(currentMap, DROITE);
+    applesEaten = 0;
 }

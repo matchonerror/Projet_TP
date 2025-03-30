@@ -1,5 +1,5 @@
 lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: \
-  /Users/tranhan/CLionProjects/Projet_TP/lib/snakewindow.cpp \
+  /Users/tranhan/CLionProjects/Projet_f/lib/snakewindow.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
@@ -1016,7 +1016,7 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: \
   /opt/anaconda3/include/qt/QtWidgets/qsizepolicy.h \
   /opt/anaconda3/include/qt/QtGui/qcursor.h \
   /opt/anaconda3/include/qt/QtGui/qkeysequence.h \
-  /Users/tranhan/CLionProjects/Projet_TP/include/snakewindow.hpp \
+  /Users/tranhan/CLionProjects/Projet_f/include/snakewindow.hpp \
   /opt/anaconda3/include/qt/QtCore/QtCore \
   /opt/anaconda3/include/qt/QtCore/QtCoreDepends \
   /opt/anaconda3/include/qt/QtCore/qabstractanimation.h \
@@ -1443,4 +1443,4 @@ lib/CMakeFiles/lib2.dir/snakewindow.cpp.o: \
   /opt/anaconda3/include/qt/QtWidgets/qwidgetaction.h \
   /opt/anaconda3/include/qt/QtWidgets/qwizard.h \
   /opt/anaconda3/include/qt/QtWidgets/qtwidgetsversion.h \
-  /Users/tranhan/CLionProjects/Projet_TP/include/jeu.hpp
+  /Users/tranhan/CLionProjects/Projet_f/include/jeu.hpp

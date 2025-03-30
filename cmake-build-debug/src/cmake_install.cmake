@@ -1,4 +1,4 @@
-# Install script for directory: /Users/tranhan/CLionProjects/Projet_TP/src
+# Install script for directory: /Users/tranhan/CLionProjects/Projet_f/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
